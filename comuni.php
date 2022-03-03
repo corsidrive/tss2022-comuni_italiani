@@ -2,9 +2,9 @@
 $cicio = file_get_contents("https://comuni-ita.herokuapp.com/api/comuni/piemonte");
 // var_dump($comuni);
 $comuni = json_decode($cicio,true);
-echo "<pre>";
+//echo "<pre>";
 // print_r($comuni);
-echo "</pre>";
+//echo "</pre>";
 ?>
 <?php include "./layout/header.php" ?>
 
