@@ -1,10 +1,28 @@
 <?php 
+// xx.xx.com?colore=rosso&altezza=10 
+// print_r($_SERVER);
+print_r($_GET);
+
+// echo "non mi vedrai mai";
+?>
+<?php 
 $cicio = file_get_contents("https://comuni-ita.herokuapp.com/api/comuni/piemonte");
 // var_dump($comuni);
 $comuni = json_decode($cicio,true);
-//echo "<pre>";
-// print_r($comuni);
-//echo "</pre>";
+
+// FILTRO DI RICERCA TESTUALE NOME COMUNE
+$cerca_comune = $_GET['nome_comune'];
+$risultato = array();
+
+foreach ($comuni as $comune) {
+    if($comune['nome'] == $cerca_comune){
+        // Aggiunge un comune all'array dei risultati
+        $risultato[] = $comune;
+    }
+}
+
+print_r($risultato);
+
 ?>
 <?php include "./layout/header.php" ?>
 
@@ -19,7 +37,7 @@ $comuni = json_decode($cicio,true);
             </tr>
             <?php 
             //$i = 0;
-            foreach($comuni as $key => $comune) { ?>
+            foreach($risultato as $key => $comune) { ?>
             <tr>
                 <th class="text-end" ><?php echo  $key + 1 ?></th>
                 <td><?php echo $comune['nome'] ?></td>

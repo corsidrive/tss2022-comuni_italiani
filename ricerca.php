@@ -1,11 +1,11 @@
 <?php include "./layout/header.php" ?>
 <main class="container">
 
-    <form action="comuni.php">
+    <form method="GET" action="comuni.php">
     
     <div class="mb-3">
         <label class="form-label" for="cerca">Scrivi il nome del comune da cercare</label>
-        <input class="form-control" id="cerca" type="text"> 
+        <input name="nome_comune"  class="form-control" id="cerca" type="text"> 
     </div>
  
 
