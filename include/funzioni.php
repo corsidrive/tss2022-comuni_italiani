@@ -2,6 +2,9 @@
 
 function cerca($cerca,$confronta)
 {
+    if(trim($cerca) === ""){
+        return false;
+    }
     $cerca = trim(strtolower($cerca));
     $confronta = trim(strtolower($confronta));
 
