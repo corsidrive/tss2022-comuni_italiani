@@ -9,6 +9,17 @@ $comuni = file_get_contents("https://comuni-ita.herokuapp.com/api/comuni/piemont
 // var_dump($comuni);
 $comuni = json_decode($comuni,true);
 
+// FILTRO DI RICERCA TESTUALE NOME COMUNE
+$cerca_comune = $_GET['nome_comune'];
+$risultato = array();
+
+foreach ($comuni as $comune) {
+    if(cercaInArray($comune,'nome',$cerca_comune)){
+        // Aggiunge un comune all'array dei risultati
+        $risultato[] = $comune;
+    }
+}
+
 
 ?>
 <?php include "./layout/header.php" ?>
@@ -23,7 +34,7 @@ $comuni = json_decode($comuni,true);
                 <th>longitudine</th>
             </tr>
             <?php         
-            foreach($comuni as $key => $comune) { ?>
+            foreach($risultato as $key => $comune) { ?>
             <tr>
                 <th class="text-end" ><?php echo  $key + 1 ?></th>
                 <td><?php echo $comune['nome'] ?></td>
