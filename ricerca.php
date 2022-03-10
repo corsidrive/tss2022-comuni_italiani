@@ -1,7 +1,7 @@
 <?php include "./layout/header.php" ?>
 <main class="container">
 
-    <form method="GET" action="comuni.php">
+    <form method="GET" action="risultato.php">
     
     <div class="mb-3">
         <label class="form-label" for="cerca">Scrivi il nome del comune da cercare</label>
