@@ -5,12 +5,17 @@
 // print_r($_GET);
 ?>
 <?php 
+
+// Model 
 $comuni = file_get_contents("https://comuni-ita.herokuapp.com/api/comuni/piemonte");
 // var_dump($comuni);
 $comuni = json_decode($comuni,true);
 
+// Cerca comune
+
 // FILTRO DI RICERCA TESTUALE NOME COMUNE
 $cerca_comune = $_GET['nome_comune'];
+
 $risultato = array();
 
 foreach ($comuni as $comune) {
