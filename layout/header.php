@@ -20,9 +20,9 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link" href="../comuni.php">Home</a>
-                    <a class="nav-link" href="../ricerca.php">Cerca</a>
-                    <a class="nav-link" href="../comuni.php">Comuni</a>
+                    <a class="nav-link" href="./comuni.php">Home</a>
+                    <a class="nav-link" href="./ricerca.php">Cerca</a>
+                    <a class="nav-link" href="comuni.php">Comuni</a>
                    
                 </div>
             </div>
