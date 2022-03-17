@@ -1,4 +1,6 @@
 <?php
+require "./model/ComuniModel.php";
+require "./view/ElencoComuniView.php";
 
 // Model chiede i dati
 $comuniModel = new ComuniModel();
